@@ -15,6 +15,8 @@
 		79CDE43B1DA8AFC3007D5DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CDE4391DA8AFC3007D5DB7 /* LaunchScreen.storyboard */; };
 		79CDE4461DA8AFC4007D5DB7 /* TestStaticLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CDE4451DA8AFC4007D5DB7 /* TestStaticLibTests.m */; };
 		79CDE4511DA8AFC4007D5DB7 /* TestStaticLibUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CDE4501DA8AFC4007D5DB7 /* TestStaticLibUITests.m */; };
+		79CDE4961DA8C85B007D5DB7 /* libCocoaTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CDE4951DA8C85B007D5DB7 /* libCocoaTouchStaticLib.a */; };
+		79CDE49A1DA8CEB6007D5DB7 /* README.MD in Sources */ = {isa = PBXBuildFile; fileRef = 79CDE4991DA8CEB6007D5DB7 /* README.MD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		79CDE44C1DA8AFC4007D5DB7 /* TestStaticLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestStaticLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CDE4501DA8AFC4007D5DB7 /* TestStaticLibUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestStaticLibUITests.m; sourceTree = "<group>"; };
 		79CDE4521DA8AFC4007D5DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79CDE48B1DA8BA7C007D5DB7 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
+		79CDE48C1DA8BA7C007D5DB7 /* LogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogHelper.h; sourceTree = "<group>"; };
+		79CDE4951DA8C85B007D5DB7 /* libCocoaTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCocoaTouchStaticLib.a; sourceTree = "<group>"; };
+		79CDE4991DA8CEB6007D5DB7 /* README.MD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CDE4961DA8C85B007D5DB7 /* libCocoaTouchStaticLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 		79CDE41F1DA8AFC3007D5DB7 = {
 			isa = PBXGroup;
 			children = (
+				79CDE4991DA8CEB6007D5DB7 /* README.MD */,
 				79CDE42A1DA8AFC3007D5DB7 /* TestStaticLib */,
 				79CDE4441DA8AFC4007D5DB7 /* TestStaticLibTests */,
 				79CDE44F1DA8AFC4007D5DB7 /* TestStaticLibUITests */,
@@ -101,6 +109,8 @@
 		79CDE42A1DA8AFC3007D5DB7 /* TestStaticLib */ = {
 			isa = PBXGroup;
 			children = (
+				79CDE4951DA8C85B007D5DB7 /* libCocoaTouchStaticLib.a */,
+				79CDE4891DA8BA7C007D5DB7 /* CocoaTouchStaticLib */,
 				79CDE42E1DA8AFC3007D5DB7 /* AppDelegate.h */,
 				79CDE42F1DA8AFC3007D5DB7 /* AppDelegate.m */,
 				79CDE4311DA8AFC3007D5DB7 /* ViewController.h */,
@@ -138,6 +148,23 @@
 				79CDE4521DA8AFC4007D5DB7 /* Info.plist */,
 			);
 			path = TestStaticLibUITests;
+			sourceTree = "<group>";
+		};
+		79CDE4891DA8BA7C007D5DB7 /* CocoaTouchStaticLib */ = {
+			isa = PBXGroup;
+			children = (
+				79CDE48A1DA8BA7C007D5DB7 /* Data */,
+				79CDE48C1DA8BA7C007D5DB7 /* LogHelper.h */,
+			);
+			path = CocoaTouchStaticLib;
+			sourceTree = "<group>";
+		};
+		79CDE48A1DA8BA7C007D5DB7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				79CDE48B1DA8BA7C007D5DB7 /* StringHelper.h */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +302,7 @@
 			files = (
 				79CDE4331DA8AFC3007D5DB7 /* ViewController.m in Sources */,
 				79CDE4301DA8AFC3007D5DB7 /* AppDelegate.m in Sources */,
+				79CDE49A1DA8CEB6007D5DB7 /* README.MD in Sources */,
 				79CDE42D1DA8AFC3007D5DB7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +452,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestStaticLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestStaticLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.richard.TestStaticLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -435,6 +467,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestStaticLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestStaticLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.richard.TestStaticLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
